@@ -1,0 +1,122 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "configurationType": {
+                    "description": "A valid configuration identified by Application Discovery Service. ",
+                    "enum": [
+                        "SERVER",
+                        "PROCESS",
+                        "CONNECTION",
+                        "APPLICATION"
+                    ],
+                    "type": "string"
+                },
+                "filters": {
+                    "description": "<p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p> <p>For a complete list of filter options and guidance about using them with this action, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations\">Querying Discovered Configuration Items</a>. </p>",
+                    "items": {
+                        "description": "<p>A filter that can use conditional operators.</p> <p>For more information about filters, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html\">Querying Discovered Configuration Items</a>. </p>",
+                        "properties": {
+                            "condition": {
+                                "description": "A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.",
+                                "type": "string"
+                            },
+                            "name": {
+                                "description": "The name of the filter.",
+                                "type": "string"
+                            },
+                            "values": {
+                                "description": "A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "values",
+                            "condition"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "maxResults": {
+                    "description": "The total number of items to return. The maximum value is 100.",
+                    "type": "integer"
+                },
+                "nextToken": {
+                    "description": "Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.",
+                    "type": "string"
+                },
+                "orderBy": {
+                    "description": "Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations\">Using the ListConfigurations Action</a>.",
+                    "items": {
+                        "description": "A field and direction for ordered output.",
+                        "properties": {
+                            "fieldName": {
+                                "description": "The field on which to order.",
+                                "type": "string"
+                            },
+                            "sortOrder": {
+                                "description": "Ordering direction.",
+                                "enum": [
+                                    "ASC",
+                                    "DESC"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "fieldName"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "configurationType"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

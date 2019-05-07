@@ -1,0 +1,72 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "configurationId": {
+                    "description": "Configuration ID of the server for which neighbors are being listed.",
+                    "type": "string"
+                },
+                "maxResults": {
+                    "description": "Maximum number of results to return in a single page of output.",
+                    "type": "integer"
+                },
+                "neighborConfigurationIds": {
+                    "description": "List of configuration IDs to test for one-hop-away.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "nextToken": {
+                    "description": "Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.",
+                    "type": "string"
+                },
+                "portInformationNeeded": {
+                    "description": "Flag to indicate if port and protocol information is needed as part of the response.",
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "configurationId"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
