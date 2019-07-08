@@ -5,7 +5,7 @@
 A generated **flow**ground connector for the AWS Application Discovery Service API (version 2015-11-01).
 
 Generated from: https://api.apis.guru/v2/specs/amazonaws.com/discovery/2015-11-01/swagger.json<br/>
-Generated at: 2019-05-07T17:35:20+03:00
+Generated at: 2019-07-08T14:12:41+03:00
 
 ## API Description
 
@@ -17,7 +17,8 @@ Supported authorization schemes:
 - API Key
 ## Actions
 
-### Associates one or more configuration items with an application.
+### AssociateConfigurationItemsToApplication
+> Associates one or more configuration items with an application.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -30,7 +31,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### <p>Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records that can identify servers or applications. </p> <p>AWS Application Discovery Service has built-in matching logic that will identify when discovered servers match existing entries that you've previously discovered, the information for the already-existing discovered server is updated. When you delete an import task that contains records that were used to match, the information in those matched records that comes from the deleted records will also be deleted.</p>
+### BatchDeleteImportData
+<blockquote><p>Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records that can identify servers or applications. </p> <p>AWS Application Discovery Service has built-in matching logic that will identify when discovered servers match existing entries that you've previously discovered, the information for the already-existing discovered server is updated. When you delete an import task that contains records that were used to match, the information in those matched records that comes from the deleted records will also be deleted.</p></blockquote>
 
 #### Input Parameters
 * `Action` - _required_
@@ -43,7 +45,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Creates an application with the given name and description.
+### CreateApplication
+> Creates an application with the given name and description.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -56,7 +59,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.
+### CreateTags
+> Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -69,7 +73,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Deletes a list of applications and their associations with configuration items.
+### DeleteApplications
+> Deletes a list of applications and their associations with configuration items.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -82,7 +87,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Deletes the association between configuration items and one or more tags. This API accepts a list of multiple configuration items.
+### DeleteTags
+> Deletes the association between configuration items and one or more tags. This API accepts a list of multiple configuration items.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -95,7 +101,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Lists agents or connectors as specified by ID or other filters. All agents/connectors associated with your user account can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.
+### DescribeAgents
+> Lists agents or connectors as specified by ID or other filters. All agents/connectors associated with your user account can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -108,7 +115,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All of the supplied IDs must be for the same asset type from one of the following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li> <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are specific to the asset type specified. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, number of network cards, etc.</p> <p>For a complete list of outputs for each asset type, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations">Using the DescribeConfigurations Action</a>.</p> </note>
+### DescribeConfigurations
+<blockquote><p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All of the supplied IDs must be for the same asset type from one of the following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li> <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are specific to the asset type specified. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, number of network cards, etc.</p> <p>For a complete list of outputs for each asset type, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations">Using the DescribeConfigurations Action</a>.</p> </note></blockquote>
 
 #### Input Parameters
 * `Action` - _required_
@@ -121,11 +129,12 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Lists exports as specified by ID. All continuous exports associated with your user account can be listed if you call <code>DescribeContinuousExports</code> as is without passing any parameters.
+### DescribeContinuousExports
+> Lists exports as specified by ID. All continuous exports associated with your user account can be listed if you call <code>DescribeContinuousExports</code> as is without passing any parameters.<br/>
 
 #### Input Parameters
-* `maxResults` - _optional_ - Pagination limit
-* `nextToken` - _optional_ - Pagination token
+* `maxResults` - _optional_ - Pagination limit<br/>
+* `nextToken` - _optional_ - Pagination token<br/>
 * `X-Amz-Content-Sha256` - _optional_
 * `X-Amz-Date` - _optional_
 * `X-Amz-Algorithm` - _optional_
@@ -134,20 +143,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeImportTasks</a>, instead.
-
-#### Input Parameters
-* `Action` - _required_
-* `Version` - _required_
-* `X-Amz-Content-Sha256` - _optional_
-* `X-Amz-Date` - _optional_
-* `X-Amz-Algorithm` - _optional_
-* `X-Amz-Credential` - _optional_
-* `X-Amz-Security-Token` - _optional_
-* `X-Amz-Signature` - _optional_
-* `X-Amz-SignedHeaders` - _optional_
-
-### Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.
+### DescribeExportConfigurations
+> <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeImportTasks</a>, instead.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -160,20 +157,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.
-
-#### Input Parameters
-* `maxResults` - _optional_ - Pagination limit
-* `nextToken` - _optional_ - Pagination token
-* `X-Amz-Content-Sha256` - _optional_
-* `X-Amz-Date` - _optional_
-* `X-Amz-Algorithm` - _optional_
-* `X-Amz-Credential` - _optional_
-* `X-Amz-Security-Token` - _optional_
-* `X-Amz-Signature` - _optional_
-* `X-Amz-SignedHeaders` - _optional_
-
-### <p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter <code>filters</code>.</p> <p>There are three valid tag filter names:</p> <ul> <li> <p>tagKey</p> </li> <li> <p>tagValue</p> </li> <li> <p>configurationId</p> </li> </ul> <p>Also, all configuration items associated with your user account that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>
+### DescribeExportTasks
+> Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -186,7 +171,22 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Disassociates one or more configuration items from an application.
+### DescribeImportTasks
+> Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.<br/>
+
+#### Input Parameters
+* `maxResults` - _optional_ - Pagination limit<br/>
+* `nextToken` - _optional_ - Pagination token<br/>
+* `X-Amz-Content-Sha256` - _optional_
+* `X-Amz-Date` - _optional_
+* `X-Amz-Algorithm` - _optional_
+* `X-Amz-Credential` - _optional_
+* `X-Amz-Security-Token` - _optional_
+* `X-Amz-Signature` - _optional_
+* `X-Amz-SignedHeaders` - _optional_
+
+### DescribeTags
+<blockquote><p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter <code>filters</code>.</p> <p>There are three valid tag filter names:</p> <ul> <li> <p>tagKey</p> </li> <li> <p>tagValue</p> </li> <li> <p>configurationId</p> </li> </ul> <p>Also, all configuration items associated with your user account that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p></blockquote>
 
 #### Input Parameters
 * `Action` - _required_
@@ -199,7 +199,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### <p>Deprecated. Use <code>StartExportTask</code> instead.</p> <p>Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID that you can query using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of two configuration exports in six hours.</p>
+### DisassociateConfigurationItemsFromApplication
+> Disassociates one or more configuration items from an application.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -212,7 +213,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### <p>Retrieves a short summary of discovered assets.</p> <p>This API operation takes no request parameters and is called as is at the command prompt as shown in the example.</p>
+### ExportConfigurations
+<blockquote><p>Deprecated. Use <code>StartExportTask</code> instead.</p> <p>Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID that you can query using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of two configuration exports in six hours.</p></blockquote>
 
 #### Input Parameters
 * `Action` - _required_
@@ -225,7 +227,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Retrieves a list of configuration items as specified by the value passed to the required paramater <code>configurationType</code>. Optional filtering may be applied to refine search results.
+### GetDiscoverySummary
+<blockquote><p>Retrieves a short summary of discovered assets.</p> <p>This API operation takes no request parameters and is called as is at the command prompt as shown in the example.</p></blockquote>
 
 #### Input Parameters
 * `Action` - _required_
@@ -238,7 +241,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Retrieves a list of servers that are one network hop away from a specified server.
+### ListConfigurations
+> Retrieves a list of configuration items as specified by the value passed to the required paramater <code>configurationType</code>. Optional filtering may be applied to refine search results.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -251,7 +255,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Start the continuous flow of agent's discovered data into Amazon Athena.
+### ListServerNeighbors
+> Retrieves a list of servers that are one network hop away from a specified server.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -264,7 +269,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Instructs the specified agents or connectors to start collecting data.
+### StartContinuousExport
+> Start the continuous flow of agent's discovered data into Amazon Athena.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -277,7 +283,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### <p> Begins the export of discovered data to an S3 bucket.</p> <p> If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by the identified Application Discovery Agent, including network, process, and performance details. A time range for exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent data is limited to five concurrently running exports. </p> <p> If you do not include an <code>agentIds</code> filter, summary data is exported that includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery Agents. Export of summary data is limited to two exports per day. </p>
+### StartDataCollectionByAgentIds
+> Instructs the specified agents or connectors to start collecting data.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -290,7 +297,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### <p>Starts an import task, which allows you to import details of your on-premises environment directly into AWS without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector or Discovery Agent. This gives you the option to perform migration assessment and planning directly from your imported data, including the ability to group your devices as applications and track their migration status.</p> <p>To start an import request, do this:</p> <ol> <li> <p>Download the specially formatted comma separated value (CSV) import template, which you can find here: <a href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p> </li> <li> <p>Fill out the template with your server and application data.</p> </li> <li> <p>Upload your import file to an Amazon S3 bucket, and make a note of it's Object URL. Your import file must be in the CSV format.</p> </li> <li> <p>Use the console or the <code>StartImportTask</code> command with the AWS CLI or one of the AWS SDKs to import the records from your file.</p> </li> </ol> <p>For more information, including step-by-step procedures, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p> <note> <p>There are limits to the number of import tasks you can create (and delete) in an AWS account. For more information, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application Discovery Service Limits</a> in the <i>AWS Application Discovery Service User Guide</i>.</p> </note>
+### StartExportTask
+<blockquote><p> Begins the export of discovered data to an S3 bucket.</p> <p> If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by the identified Application Discovery Agent, including network, process, and performance details. A time range for exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent data is limited to five concurrently running exports. </p> <p> If you do not include an <code>agentIds</code> filter, summary data is exported that includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery Agents. Export of summary data is limited to two exports per day. </p></blockquote>
 
 #### Input Parameters
 * `Action` - _required_
@@ -303,7 +311,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Stop the continuous flow of agent's discovered data into Amazon Athena.
+### StartImportTask
+<blockquote><p>Starts an import task, which allows you to import details of your on-premises environment directly into AWS without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector or Discovery Agent. This gives you the option to perform migration assessment and planning directly from your imported data, including the ability to group your devices as applications and track their migration status.</p> <p>To start an import request, do this:</p> <ol> <li> <p>Download the specially formatted comma separated value (CSV) import template, which you can find here: <a href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p> </li> <li> <p>Fill out the template with your server and application data.</p> </li> <li> <p>Upload your import file to an Amazon S3 bucket, and make a note of it's Object URL. Your import file must be in the CSV format.</p> </li> <li> <p>Use the console or the <code>StartImportTask</code> command with the AWS CLI or one of the AWS SDKs to import the records from your file.</p> </li> </ol> <p>For more information, including step-by-step procedures, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p> <note> <p>There are limits to the number of import tasks you can create (and delete) in an AWS account. For more information, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application Discovery Service Limits</a> in the <i>AWS Application Discovery Service User Guide</i>.</p> </note></blockquote>
 
 #### Input Parameters
 * `Action` - _required_
@@ -316,7 +325,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Instructs the specified agents or connectors to stop collecting data.
+### StopContinuousExport
+> Stop the continuous flow of agent's discovered data into Amazon Athena.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -329,7 +339,22 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Updates metadata about an application.
+### StopDataCollectionByAgentIds
+> Instructs the specified agents or connectors to stop collecting data.<br/>
+
+#### Input Parameters
+* `Action` - _required_
+* `Version` - _required_
+* `X-Amz-Content-Sha256` - _optional_
+* `X-Amz-Date` - _optional_
+* `X-Amz-Algorithm` - _optional_
+* `X-Amz-Credential` - _optional_
+* `X-Amz-Security-Token` - _optional_
+* `X-Amz-Signature` - _optional_
+* `X-Amz-SignedHeaders` - _optional_
+
+### UpdateApplication
+> Updates metadata about an application.<br/>
 
 #### Input Parameters
 * `Action` - _required_

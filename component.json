@@ -1,6 +1,6 @@
 {
     "title": "AWS Application Discovery Service",
-    "description": "<fullname>AWS Application Discovery Service</fullname> <p>AWS Application Discovery Service helps you plan application migration projects by automatically identifying servers, virtual machines (VMs), software, and software dependencies running in your on-premises data centers. Application Discovery Service also collects application performance data, which can help you assess the outcome of your migration. The data collected by Application Discovery Service is securely retained in an AWS-hosted and managed database in the cloud. You can export the data as a CSV or XML file into your preferred visualization tool or cloud-migration solution to plan your migration. For more information, see <a href=\"http://aws.amazon.com/application-discovery/faqs/\">AWS Application Discovery Service FAQ</a>.</p> <p>Application Discovery Service offers two modes of operation:</p> <ul> <li> <p> <b>Agentless discovery</b> mode is recommended for environments that use VMware vCenter Server. This mode doesn't require you to install an agent on each host. Agentless discovery gathers server information regardless of the operating systems, which minimizes the time required for initial on-premises infrastructure assessment. Agentless discovery doesn't collect information about software and software dependencies. It also doesn't work in non-VMware environments. </p> </li> <li> <p> <b>Agent-based discovery</b> mode collects a richer set of data than agentless discovery by using the AWS Application Discovery Agent, which you install on one or more hosts in your data center. The agent captures infrastructure and application information, including an inventory of installed software applications, system and process performance, resource utilization, and network dependencies between workloads. The information collected by agents is secured at rest and in transit to the Application Discovery Service database in the cloud. </p> </li> </ul> <p>We recommend that you use agent-based discovery for non-VMware environments and to collect information about software and software dependencies. You can also run agent-based and agentless discovery simultaneously. Use agentless discovery to quickly complete the initial infrastructure assessment and then install agents on select hosts.</p> <p>Application Discovery Service integrates with application discovery solutions from AWS Partner Network (APN) partners. Third-party application discovery tools can query Application Discovery Service and write to the Application Discovery Service database using a public API. You can then import the data into either a visualization tool or cloud-migration solution.</p> <important> <p>Application Discovery Service doesn't gather sensitive information. All data is handled according to the <a href=\"http://aws.amazon.com/privacy/\">AWS Privacy Policy</a>. You can operate Application Discovery Service offline to inspect collected data before it is shared with the service.</p> </important> <p>This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for Application Discovery Service. The topic for each action shows the API request parameters and the response. Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're using. For more information, see <a href=\"http://aws.amazon.com/tools/#SDKs\">AWS SDKs</a>.</p> <p>This guide is intended for use with the <a href=\"http://docs.aws.amazon.com/application-discovery/latest/userguide/\"> <i>AWS Application Discovery Service User Guide</i> </a>.</p>",
+    "description": "AWS Application Discovery Service AWS Application Discovery Service helps you\nplan application migration projects by automatically identifying servers,\nvirtual machines (VMs), software, and software dependencies running in your\non-premises data centers. Application Discovery Service also collects\napplication performance data, which can help you assess the outcome of your\nmigration. The data collected by Application Discovery Service is securely\nretained in an AWS-hosted and managed database in the cloud. You can export the\ndata as a CSV or XML file into your preferred visualization tool or\ncloud-migration solution to plan your migration. For more information, see AWS\nApplication Discovery Service FAQ\n[http://aws.amazon.com/application-discovery/faqs/].\n\nApplication Discovery Service offers two modes of operation:\n\n *   Agentless discovery mode is recommended for environments that use VMware\n   vCenter Server. This mode doesn't require you to install an agent on each\n   host. Agentless discovery gathers server information regardless of the\n   operating systems, which minimizes the time required for initial on-premises\n   infrastructure assessment. Agentless discovery doesn't collect information\n   about software and software dependencies. It also doesn't work in non-VMware\n   environments. \n   \n   \n *   Agent-based discovery mode collects a richer set of data than agentless\n   discovery by using the AWS Application Discovery Agent, which you install on\n   one or more hosts in your data center. The agent captures infrastructure and\n   application information, including an inventory of installed software\n   applications, system and process performance, resource utilization, and\n   network dependencies between workloads. The information collected by agents\n   is secured at rest and in transit to the Application Discovery Service\n   database in the cloud. \n   \n   \n\nWe recommend that you use agent-based discovery for non-VMware environments and\nto collect information about software and software dependencies. You can also\nrun agent-based and agentless discovery simultaneously. Use agentless discovery\nto quickly complete the initial infrastructure assessment and then install\nagents on select hosts.\n\nApplication Discovery Service integrates with application discovery solutions\nfrom AWS Partner Network (APN) partners. Third-party application discovery tools\ncan query Application Discovery Service and write to the Application Discovery\nService database using a public API. You can then import the data into either a\nvisualization tool or cloud-migration solution.\n\nApplication Discovery Service doesn't gather sensitive information. All data is\nhandled according to the AWS Privacy Policy [http://aws.amazon.com/privacy/].\nYou can operate Application Discovery Service offline to inspect collected data\nbefore it is shared with the service.\n\nThis API reference provides descriptions, syntax, and usage examples for each of\nthe actions and data types for Application Discovery Service. The topic for each\naction shows the API request parameters and the response. Alternatively, you can\nuse one of the AWS SDKs to access an API that is tailored to the programming\nlanguage or platform that you're using. For more information, see AWS SDKs\n[http://aws.amazon.com/tools/#SDKs].\n\nThis guide is intended for use with the AWS Application Discovery Service User\nGuide [http://docs.aws.amazon.com/application-discovery/latest/userguide/].",
     "docsUrl": "https://aws.amazon.com/discovery/",
     "url": "https://api.apis.guru/v2/specs/amazonaws.com/discovery/2015-11-01/swagger.json",
     "envVars": {},
@@ -20,7 +20,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "hmac": {
+            "auth_hmac": {
                 "label": "Authorization (hmac)",
                 "viewClass": "TextFieldView",
                 "note": "Amazon Signature authorization v4"
@@ -38,7 +38,7 @@
     "actions": {
         "AssociateConfigurationItemsToApplication": {
             "main": "./lib/actions/AssociateConfigurationItemsToApplication.js",
-            "title": "Associates one or more configuration items with an application.",
+            "title": "AssociateConfigurationItemsToApplication",
             "description": "Associates one or more configuration items with an application.",
             "fields": {
                 "verbose": {
@@ -55,8 +55,8 @@
         },
         "BatchDeleteImportData": {
             "main": "./lib/actions/BatchDeleteImportData.js",
-            "title": "<p>Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records that can identify servers or applications. </p> <p>AWS Application Discovery Service has built-in matching logic that will identify when discovered servers match existing entries that you've previously discovered, the information for the already-existing discovered server is updated. When you delete an import task that contains records that were used to match, the information in those matched records that comes from the deleted records will also be deleted.</p>",
-            "description": "<p>Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records that can identify servers or applications. </p> <p>AWS Application Discovery Service has built-in matching logic that will identify when discovered servers match existing entries that you've previously discovered, the information for the already-existing discovered server is updated. When you delete an import task that contains records that were used to match, the information in those matched records that comes from the deleted records will also be deleted.</p>",
+            "title": "BatchDeleteImportData",
+            "description": "Deletes one or more import tasks, each identified by their import ID. Each\nimport task has a number of records that can identify servers or applications. \n\nAWS Application Discovery Service has built-in matching logic that will identify\nwhen discovered servers match existing entries that you've previously\ndiscovered, the information for the already-existing discovered server is\nupdated. When you delete an import task that contains records that were used to\nmatch, the information in those matched records that comes from the deleted\nrecords will also be deleted.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -72,7 +72,7 @@
         },
         "CreateApplication": {
             "main": "./lib/actions/CreateApplication.js",
-            "title": "Creates an application with the given name and description.",
+            "title": "CreateApplication",
             "description": "Creates an application with the given name and description.",
             "fields": {
                 "verbose": {
@@ -89,7 +89,7 @@
         },
         "CreateTags": {
             "main": "./lib/actions/CreateTags.js",
-            "title": "Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.",
+            "title": "CreateTags",
             "description": "Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.",
             "fields": {
                 "verbose": {
@@ -106,7 +106,7 @@
         },
         "DeleteApplications": {
             "main": "./lib/actions/DeleteApplications.js",
-            "title": "Deletes a list of applications and their associations with configuration items.",
+            "title": "DeleteApplications",
             "description": "Deletes a list of applications and their associations with configuration items.",
             "fields": {
                 "verbose": {
@@ -123,7 +123,7 @@
         },
         "DeleteTags": {
             "main": "./lib/actions/DeleteTags.js",
-            "title": "Deletes the association between configuration items and one or more tags. This API accepts a list of multiple configuration items.",
+            "title": "DeleteTags",
             "description": "Deletes the association between configuration items and one or more tags. This API accepts a list of multiple configuration items.",
             "fields": {
                 "verbose": {
@@ -140,7 +140,7 @@
         },
         "DescribeAgents": {
             "main": "./lib/actions/DescribeAgents.js",
-            "title": "Lists agents or connectors as specified by ID or other filters. All agents/connectors associated with your user account can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.",
+            "title": "DescribeAgents",
             "description": "Lists agents or connectors as specified by ID or other filters. All agents/connectors associated with your user account can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.",
             "fields": {
                 "verbose": {
@@ -157,8 +157,8 @@
         },
         "DescribeConfigurations": {
             "main": "./lib/actions/DescribeConfigurations.js",
-            "title": "<p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All of the supplied IDs must be for the same asset type from one of the following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li> <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are specific to the asset type specified. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, number of network cards, etc.</p> <p>For a complete list of outputs for each asset type, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations\">Using the DescribeConfigurations Action</a>.</p> </note>",
-            "description": "<p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All of the supplied IDs must be for the same asset type from one of the following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li> <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are specific to the asset type specified. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, number of network cards, etc.</p> <p>For a complete list of outputs for each asset type, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations\">Using the DescribeConfigurations Action</a>.</p> </note>",
+            "title": "DescribeConfigurations",
+            "description": "Retrieves attributes for a list of configuration item IDs.\n\nAll of the supplied IDs must be for the same asset type from one of the\nfollowing:\n\n *  server\n   \n   \n *  application\n   \n   \n *  process\n   \n   \n *  connection\n   \n   \n\nOutput fields are specific to the asset type specified. For example, the output\nfor a server configuration item includes a list of attributes about the server,\nsuch as host name, operating system, number of network cards, etc.\n\nFor a complete list of outputs for each asset type, see Using the\nDescribeConfigurations Action\n[http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations]\n.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -174,7 +174,7 @@
         },
         "DescribeContinuousExports": {
             "main": "./lib/actions/DescribeContinuousExports.js",
-            "title": "Lists exports as specified by ID. All continuous exports associated with your user account can be listed if you call <code>DescribeContinuousExports</code> as is without passing any parameters.",
+            "title": "DescribeContinuousExports",
             "description": "Lists exports as specified by ID. All continuous exports associated with your user account can be listed if you call <code>DescribeContinuousExports</code> as is without passing any parameters.",
             "fields": {
                 "verbose": {
@@ -191,7 +191,7 @@
         },
         "DescribeExportConfigurations": {
             "main": "./lib/actions/DescribeExportConfigurations.js",
-            "title": " <code>DescribeExportConfigurations</code> is deprecated. Use <a href=\"https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html\">DescribeImportTasks</a>, instead.",
+            "title": "DescribeExportConfigurations",
             "description": " <code>DescribeExportConfigurations</code> is deprecated. Use <a href=\"https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html\">DescribeImportTasks</a>, instead.",
             "fields": {
                 "verbose": {
@@ -208,7 +208,7 @@
         },
         "DescribeExportTasks": {
             "main": "./lib/actions/DescribeExportTasks.js",
-            "title": "Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.",
+            "title": "DescribeExportTasks",
             "description": "Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.",
             "fields": {
                 "verbose": {
@@ -225,7 +225,7 @@
         },
         "DescribeImportTasks": {
             "main": "./lib/actions/DescribeImportTasks.js",
-            "title": "Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.",
+            "title": "DescribeImportTasks",
             "description": "Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.",
             "fields": {
                 "verbose": {
@@ -242,8 +242,8 @@
         },
         "DescribeTags": {
             "main": "./lib/actions/DescribeTags.js",
-            "title": "<p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter <code>filters</code>.</p> <p>There are three valid tag filter names:</p> <ul> <li> <p>tagKey</p> </li> <li> <p>tagValue</p> </li> <li> <p>configurationId</p> </li> </ul> <p>Also, all configuration items associated with your user account that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>",
-            "description": "<p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter <code>filters</code>.</p> <p>There are three valid tag filter names:</p> <ul> <li> <p>tagKey</p> </li> <li> <p>tagValue</p> </li> <li> <p>configurationId</p> </li> </ul> <p>Also, all configuration items associated with your user account that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>",
+            "title": "DescribeTags",
+            "description": "Retrieves a list of configuration items that have tags as specified by the\nkey-value pairs, name and value, passed to the optional parameter filters.\n\nThere are three valid tag filter names:\n\n *  tagKey\n   \n   \n *  tagValue\n   \n   \n *  configurationId\n   \n   \n\nAlso, all configuration items associated with your user account that have tags\ncan be listed if you call DescribeTags as is without passing any parameters.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -259,7 +259,7 @@
         },
         "DisassociateConfigurationItemsFromApplication": {
             "main": "./lib/actions/DisassociateConfigurationItemsFromApplication.js",
-            "title": "Disassociates one or more configuration items from an application.",
+            "title": "DisassociateConfigurationItemsFromApplication",
             "description": "Disassociates one or more configuration items from an application.",
             "fields": {
                 "verbose": {
@@ -276,8 +276,8 @@
         },
         "ExportConfigurations": {
             "main": "./lib/actions/ExportConfigurations.js",
-            "title": "<p>Deprecated. Use <code>StartExportTask</code> instead.</p> <p>Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID that you can query using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of two configuration exports in six hours.</p>",
-            "description": "<p>Deprecated. Use <code>StartExportTask</code> instead.</p> <p>Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID that you can query using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of two configuration exports in six hours.</p>",
+            "title": "ExportConfigurations",
+            "description": "Deprecated. Use StartExportTask instead.\n\nExports all discovered configuration data to an Amazon S3 bucket or an\napplication that enables you to view and evaluate the data. Data includes tags\nand tag associations, processes, connections, servers, and system performance.\nThis API returns an export ID that you can query using the \nDescribeExportConfigurations API. The system imposes a limit of two\nconfiguration exports in six hours.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -293,8 +293,8 @@
         },
         "GetDiscoverySummary": {
             "main": "./lib/actions/GetDiscoverySummary.js",
-            "title": "<p>Retrieves a short summary of discovered assets.</p> <p>This API operation takes no request parameters and is called as is at the command prompt as shown in the example.</p>",
-            "description": "<p>Retrieves a short summary of discovered assets.</p> <p>This API operation takes no request parameters and is called as is at the command prompt as shown in the example.</p>",
+            "title": "GetDiscoverySummary",
+            "description": "Retrieves a short summary of discovered assets.\n\nThis API operation takes no request parameters and is called as is at the\ncommand prompt as shown in the example.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -310,7 +310,7 @@
         },
         "ListConfigurations": {
             "main": "./lib/actions/ListConfigurations.js",
-            "title": "Retrieves a list of configuration items as specified by the value passed to the required paramater <code>configurationType</code>. Optional filtering may be applied to refine search results.",
+            "title": "ListConfigurations",
             "description": "Retrieves a list of configuration items as specified by the value passed to the required paramater <code>configurationType</code>. Optional filtering may be applied to refine search results.",
             "fields": {
                 "verbose": {
@@ -327,7 +327,7 @@
         },
         "ListServerNeighbors": {
             "main": "./lib/actions/ListServerNeighbors.js",
-            "title": "Retrieves a list of servers that are one network hop away from a specified server.",
+            "title": "ListServerNeighbors",
             "description": "Retrieves a list of servers that are one network hop away from a specified server.",
             "fields": {
                 "verbose": {
@@ -344,7 +344,7 @@
         },
         "StartContinuousExport": {
             "main": "./lib/actions/StartContinuousExport.js",
-            "title": "Start the continuous flow of agent's discovered data into Amazon Athena.",
+            "title": "StartContinuousExport",
             "description": "Start the continuous flow of agent's discovered data into Amazon Athena.",
             "fields": {
                 "verbose": {
@@ -361,7 +361,7 @@
         },
         "StartDataCollectionByAgentIds": {
             "main": "./lib/actions/StartDataCollectionByAgentIds.js",
-            "title": "Instructs the specified agents or connectors to start collecting data.",
+            "title": "StartDataCollectionByAgentIds",
             "description": "Instructs the specified agents or connectors to start collecting data.",
             "fields": {
                 "verbose": {
@@ -378,8 +378,8 @@
         },
         "StartExportTask": {
             "main": "./lib/actions/StartExportTask.js",
-            "title": "<p> Begins the export of discovered data to an S3 bucket.</p> <p> If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by the identified Application Discovery Agent, including network, process, and performance details. A time range for exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent data is limited to five concurrently running exports. </p> <p> If you do not include an <code>agentIds</code> filter, summary data is exported that includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery Agents. Export of summary data is limited to two exports per day. </p>",
-            "description": "<p> Begins the export of discovered data to an S3 bucket.</p> <p> If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by the identified Application Discovery Agent, including network, process, and performance details. A time range for exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent data is limited to five concurrently running exports. </p> <p> If you do not include an <code>agentIds</code> filter, summary data is exported that includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery Agents. Export of summary data is limited to two exports per day. </p>",
+            "title": "StartExportTask",
+            "description": " Begins the export of discovered data to an S3 bucket.\n\n If you specify agentIds in a filter, the task exports up to 72 hours of\ndetailed data collected by the identified Application Discovery Agent, including\nnetwork, process, and performance details. A time range for exported agent data\nmay be set by using startTime and endTime. Export of detailed agent data is\nlimited to five concurrently running exports. \n\n If you do not include an agentIds filter, summary data is exported that\nincludes both AWS Agentless Discovery Connector data and summary data from AWS\nDiscovery Agents. Export of summary data is limited to two exports per day.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -395,8 +395,8 @@
         },
         "StartImportTask": {
             "main": "./lib/actions/StartImportTask.js",
-            "title": "<p>Starts an import task, which allows you to import details of your on-premises environment directly into AWS without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector or Discovery Agent. This gives you the option to perform migration assessment and planning directly from your imported data, including the ability to group your devices as applications and track their migration status.</p> <p>To start an import request, do this:</p> <ol> <li> <p>Download the specially formatted comma separated value (CSV) import template, which you can find here: <a href=\"https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv\">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p> </li> <li> <p>Fill out the template with your server and application data.</p> </li> <li> <p>Upload your import file to an Amazon S3 bucket, and make a note of it's Object URL. Your import file must be in the CSV format.</p> </li> <li> <p>Use the console or the <code>StartImportTask</code> command with the AWS CLI or one of the AWS SDKs to import the records from your file.</p> </li> </ol> <p>For more information, including step-by-step procedures, see <a href=\"https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html\">Migration Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p> <note> <p>There are limits to the number of import tasks you can create (and delete) in an AWS account. For more information, see <a href=\"https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html\">AWS Application Discovery Service Limits</a> in the <i>AWS Application Discovery Service User Guide</i>.</p> </note>",
-            "description": "<p>Starts an import task, which allows you to import details of your on-premises environment directly into AWS without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector or Discovery Agent. This gives you the option to perform migration assessment and planning directly from your imported data, including the ability to group your devices as applications and track their migration status.</p> <p>To start an import request, do this:</p> <ol> <li> <p>Download the specially formatted comma separated value (CSV) import template, which you can find here: <a href=\"https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv\">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p> </li> <li> <p>Fill out the template with your server and application data.</p> </li> <li> <p>Upload your import file to an Amazon S3 bucket, and make a note of it's Object URL. Your import file must be in the CSV format.</p> </li> <li> <p>Use the console or the <code>StartImportTask</code> command with the AWS CLI or one of the AWS SDKs to import the records from your file.</p> </li> </ol> <p>For more information, including step-by-step procedures, see <a href=\"https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html\">Migration Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p> <note> <p>There are limits to the number of import tasks you can create (and delete) in an AWS account. For more information, see <a href=\"https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html\">AWS Application Discovery Service Limits</a> in the <i>AWS Application Discovery Service User Guide</i>.</p> </note>",
+            "title": "StartImportTask",
+            "description": "Starts an import task, which allows you to import details of your on-premises\nenvironment directly into AWS without having to use the Application Discovery\nService (ADS) tools such as the Discovery Connector or Discovery Agent. This\ngives you the option to perform migration assessment and planning directly from\nyour imported data, including the ability to group your devices as applications\nand track their migration status.\n\nTo start an import request, do this:\n\n 1.  Download the specially formatted comma separated value (CSV) import\n    template, which you can find here: \n    https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv\n    [https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv]\n    .\n    \n    \n 2.  Fill out the template with your server and application data.\n    \n    \n 3.  Upload your import file to an Amazon S3 bucket, and make a note of it's\n    Object URL. Your import file must be in the CSV format.\n    \n    \n 4.  Use the console or the StartImportTask command with the AWS CLI or one of\n    the AWS SDKs to import the records from your file.\n    \n    \n\nFor more information, including step-by-step procedures, see Migration Hub\nImport\n[https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html] \nin the AWS Application Discovery Service User Guide.\n\nThere are limits to the number of import tasks you can create (and delete) in an\nAWS account. For more information, see AWS Application Discovery Service Limits\n[https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html] \nin the AWS Application Discovery Service User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -412,7 +412,7 @@
         },
         "StopContinuousExport": {
             "main": "./lib/actions/StopContinuousExport.js",
-            "title": "Stop the continuous flow of agent's discovered data into Amazon Athena.",
+            "title": "StopContinuousExport",
             "description": "Stop the continuous flow of agent's discovered data into Amazon Athena.",
             "fields": {
                 "verbose": {
@@ -429,7 +429,7 @@
         },
         "StopDataCollectionByAgentIds": {
             "main": "./lib/actions/StopDataCollectionByAgentIds.js",
-            "title": "Instructs the specified agents or connectors to stop collecting data.",
+            "title": "StopDataCollectionByAgentIds",
             "description": "Instructs the specified agents or connectors to stop collecting data.",
             "fields": {
                 "verbose": {
@@ -446,7 +446,7 @@
         },
         "UpdateApplication": {
             "main": "./lib/actions/UpdateApplication.js",
-            "title": "Updates metadata about an application.",
+            "title": "UpdateApplication",
             "description": "Updates metadata about an application.",
             "fields": {
                 "verbose": {
